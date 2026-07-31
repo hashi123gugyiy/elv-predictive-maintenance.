@@ -9,7 +9,8 @@ Background: ELV/fire alarm & BMS field engineering, learning applied ML/AI.
 
 ```
 .
-├── data/           # cached dataset CSV (gitignored, regenerate with src/fetch_data.py)
+├── data/           # dataset CSV, committed (small, ~385KB) so app.py/Streamlit Cloud
+│                   # don't depend on a runtime fetch; regenerate with src/fetch_data.py
 ├── notebooks/      # exploratory notebooks
 ├── src/            # scripts
 │   ├── fetch_data.py         # pulls dataset via ucimlrepo, caches to data/ai4i2020.csv
