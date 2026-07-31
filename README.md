@@ -30,6 +30,20 @@ source venv/bin/activate
 pip install -r requirements.txt
 ```
 
+## Streamlit app
+
+```bash
+streamlit run app.py
+```
+
+Two tabs:
+- **Failure Risk Predictor** — sliders for the 5 raw sensor readings (+ machine
+  Type), run through the trained RF (engineered features), showing failure
+  probability and a HIGH/LOW RISK label at the 0.3 threshold.
+- **Expected-Cost Threshold Explorer** — drag the missed-failure/false-alarm
+  cost ratio and watch the expected-cost curve and cost-minimizing threshold
+  update live (same math as `expected_cost_analysis()`).
+
 ## Usage
 
 ```bash
@@ -124,6 +138,7 @@ See `reports/rf_expected_cost_vs_threshold.png` and
 - [x] Feature engineering (raw vs. engineered) & stratified train/test split
 - [x] Baseline models (logistic regression, random forest) via scikit-learn
 - [x] Threshold selection via expected-cost framework (illustrative costs)
+- [x] Streamlit app: risk predictor + interactive expected-cost explorer
 - [ ] Replace illustrative SAR costs with real maintenance/finance figures
 - [ ] PyTorch model using MPS backend (Apple Silicon GPU) for comparison
 - [ ] Streamlit dashboard for interactive exploration / model demo
